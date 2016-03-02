@@ -1,0 +1,5 @@
+build
+.serve
+.idea
+env
+node_modules

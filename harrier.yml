@@ -1,0 +1,8 @@
+root: src
+execute:
+  commands:
+    - './node_modules/webpack/bin/webpack.js'
+  patterns:
+    - '*.jsx'
+  generates:
+    - 'bundle.js'
