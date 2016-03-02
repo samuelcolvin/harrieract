@@ -44,11 +44,13 @@ var Comment = React.createClass({
 
   render: function() {
     return (
-      <div className='comment'>
-        <h2 className='commentAuthor'>
+      <div className='panel panel-default'>
+        <div className='panel-heading'>
           {this.props.author}
-        </h2>
-        <span dangerouslySetInnerHTML={this.raw_markup()} />
+        </div>
+        <div className='panel-body'>
+          <span dangerouslySetInnerHTML={this.raw_markup()} />
+        </div>
       </div>
     )
   }

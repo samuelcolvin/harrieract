@@ -3,3 +3,4 @@ build
 .idea
 env
 node_modules
+bower_components
