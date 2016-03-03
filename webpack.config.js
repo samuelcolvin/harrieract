@@ -4,6 +4,9 @@ module.exports = {
     path: __dirname + '/src',
     filename: 'bundle.js'
   },
+  externals: {
+    jquery: 'jQuery'
+  },
   module: {
     loaders: [
       {

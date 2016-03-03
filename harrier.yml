@@ -1,8 +1,14 @@
 root: src
 execute:
   commands:
-    - './node_modules/webpack/bin/webpack.js'
+    - './node_modules/.bin/webpack'
   patterns:
     - '*.jsx'
+    - '*.js'
   generates:
     - 'bundle.js'
+jinja:
+  extra_patterns:
+    - 'settings.js'
+context:
+  api_server: 'http://localhost:8001'

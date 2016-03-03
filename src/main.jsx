@@ -1,18 +1,30 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import marked from 'marked'
-
-var data = [
-  {id: 1, author: 'Pete Hunt', text: 'This is one comment'},
-  {id: 2, author: 'Jordan Walker', text: 'This is **another** comment'}
-]
+import $ from 'jquery'
 
 var CommentBox = React.createClass({
+  getInitialState: function() {
+    return {data: []}
+  },
+  componentDidMount: function() {
+    $.ajax({
+      url: this.props.url,
+      dataType: 'json',
+      cache: false,
+      success: function(data) {
+        this.setState({data: data})
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(this.props.url, status, err.toString())
+      }.bind(this)
+    })
+  },
   render: function() {
     return (
       <div className='commentBox'>
         <h1>Comments</h1>
-        <CommentList data={this.props.data}/>
+        <CommentList data={this.state.data} />
         <CommentForm />
       </div>
     )
@@ -66,7 +78,10 @@ var CommentForm = React.createClass({
   }
 })
 
+var server_url = $('#data').data('url')
+//var comments_url = server_url
+
 ReactDOM.render(
-  <CommentBox data={data} />,
+  <CommentBox url={server_url + '/comments'} />,
   document.getElementById('content')
 )
