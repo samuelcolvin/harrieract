@@ -12,3 +12,5 @@ jinja:
     - 'settings.js'
 context:
   api_server: 'http://localhost:8001'
+subprocesses:
+  - 'gunicorn -b 0.0.0.0:8001 -k aiohttp.worker.GunicornWebWorker -t 60 --reload app:app'

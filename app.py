@@ -24,4 +24,4 @@ async def on_prepare(request, response):
     response.headers['Access-Control-Allow-Origin'] = 'http://localhost:8000'
 app.on_response_prepare.append(on_prepare)
 
-web.run_app(app, port=8001)
+# web.run_app(app, port=8001)

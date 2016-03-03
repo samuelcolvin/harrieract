@@ -79,7 +79,6 @@ var CommentForm = React.createClass({
 })
 
 var server_url = $('#data').data('url')
-//var comments_url = server_url
 
 ReactDOM.render(
   <CommentBox url={server_url + '/comments'} />,

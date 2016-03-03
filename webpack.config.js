@@ -1,9 +1,7 @@
 module.exports = {
   entry: './src/main.jsx',
-  output: {
-    path: __dirname + '/src',
-    filename: 'bundle.js'
-  },
+  // remove output to supply it from command line
+  output: {path: __dirname + '/src', filename: 'bundle.js'},
   externals: {
     jquery: 'jQuery'
   },
