@@ -1,12 +1,12 @@
 root: src
 execute:
   commands:
-    - './node_modules/.bin/webpack'
+    -
+      command: './node_modules/.bin/webpack'
+      generates: ['bundle.js']
   patterns:
     - '*.jsx'
     - '*.js'
-  generates:
-    - 'bundle.js'
 jinja:
   extra_patterns:
     - 'settings.js'
